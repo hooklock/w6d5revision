@@ -16,9 +16,21 @@ Store.prototype = {
 
 addRecord: function(record){
   this.inventory.push(record);
-  }
+},
+
+sellRecord: function(record){
+  result = (this.balance += record.price);
+  return result;
+},
+
+finStat: function(records){
+  value = _.sumBy(this.inventory, function(record) {return record.price;});
+  return value;
+}
 
 };
+
+
 
 
 module.exports = Store;
