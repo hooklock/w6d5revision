@@ -10,7 +10,7 @@ var Store = function(name, city, inventory, balance){
 
 Store.prototype = {
  openInventory: function(records){
-   this.inventory.push(records);
+  this.inventory.push(records);
   this.inventory = _.flatten(this.inventory);
 },
 

@@ -7,7 +7,7 @@ var Record = function(artist, title, price){
 };
 
 Record.prototype = {
-
+  
 };
 
 

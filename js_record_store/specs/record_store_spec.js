@@ -8,11 +8,23 @@ describe("Store", function(){
     macks = new Store ("Mack's", "Glasgow", [], 1000);
     rec1 = new Record("David Bowie", "Hunky Dory", 9.99);
     rec2 = new Record("David Bowie", "Blackstar", 11.99);
-    rec3 = new Record("David Bowie", "Little Wonder", 5.99);
+    rec3 = new Record("David Bowie", "Earthling", 5.99);
     rec4 = new Record("Ozzy Osbourne", "Down to Earth", 6.99);
     rec5 = new Record("Goldfrapp", "Supernature", 9.99);
     rec6 = new Record("Pink Floyd", "The Wall", 15.99);
     records = [rec1, rec2, rec3, rec4, rec5, rec6];
+  });
+
+  it("Should have a name", function(){
+    assert.equal("Mack's", macks.name);
+  });
+
+  it("Should have a city", function(){
+    assert.equal("Glasgow", macks.city);
+  });
+
+  it("Should have an opening balance", function(){
+    assert.equal(1000, macks.balance);
   });
 
   it("should have records in its inventory", function(){
