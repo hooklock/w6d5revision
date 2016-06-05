@@ -24,9 +24,17 @@ sellRecord: function(record){
 },
 
 finStat: function(records){
-  value = _.sumBy(this.inventory, function(record) {return record.price;});
-  return value;
+  _.sumBy(this.inventory, function(record) {return record.price;});
 }
+
+
+// finStat: function sum(inventory){
+//   return Object.keys(inventory)
+//     .reduce(function(sum, price){
+//       return sum + parseFloat(inventory[price]);
+//     }, 0);
+// }
+
 
 };
 
