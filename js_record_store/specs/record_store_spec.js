@@ -55,9 +55,10 @@ describe("Store", function(){
 
   it("should be able to return the balance and value of stock", function(){
     macks.openInventory(records);
-    macks.finStat(records);
+    // macks.finStat(records);
     assert.equal(1000, macks.balance);
-    assert.equal(60.94, macks.records);
+    assert.equal(60.94, macks.finStat());
+    // console.log(macks);
   });
 
 });

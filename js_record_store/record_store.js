@@ -9,23 +9,28 @@ var Store = function(name, city, inventory, balance){
 };
 
 Store.prototype = {
- openInventory: function(records){
-  this.inventory.push(records);
-  this.inventory = _.flatten(this.inventory);
-},
+  openInventory: function(records){
+    this.inventory.push(records);
+    this.inventory = _.flatten(this.inventory);
+  },
 
-addRecord: function(record){
-  this.inventory.push(record);
-},
+  addRecord: function(record){
+    this.inventory.push(record);
+  },
 
-sellRecord: function(record){
-  result = (this.balance += record.price);
-  return result;
-},
+  sellRecord: function(record){
+    result = (this.balance += record.price);
+    return result;
+  },
 
-finStat: function(records){
-  _.sumBy(this.inventory, function(record) {return record.price;});
-}
+  finStat: function(){
+  // var total = 0;
+  // for (var i = 0; i < this.inventory.length; i++) {
+  //   total += this.inventory[i].price;
+  // }
+  // return total.toFixed(2);
+    return _.sumBy(this.inventory, function(record) {return record.price;}).toFixed(2);
+  }
 
 
 // finStat: function sum(inventory){
